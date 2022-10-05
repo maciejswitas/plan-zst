@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Plan ZST</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="getClasses()">
+        <div id="mainView">
+            <form>
+                <select id="classSelect" name="className"></select>
+                <button type="button" onclick="getPlan()">Sprawdź</button>
+                <div id="planView"></div>
+            </form>
+        </div>
+        <script src="./JS/ajax.js"></script>
+        <script src="./JS/classes/MainView.js"></script>
+    </body>
+</html>
