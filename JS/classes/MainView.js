@@ -8,26 +8,24 @@ class MainView {
         let element = document.getElementById(id);
         this.element = element;
     }
+    
     addClassSelect(responseText, classSelect) {
         const classesArray = responseText.split("|");
         let element = document.getElementById(classSelect);
         let option;
         classesArray.sort();
-        for(let i=0; i < classesArray.length; i++) {
+        for(let i=1; i < classesArray.length; i++) {
             option = document.createElement("option");
             option.text = classesArray[i];
             option.value = classesArray[i];
             element.add(option);
         }
+        document.getElementById("mainForm").className = "d-flex";
+        this.element.innerHTML = "";        
     }
     
     addPlan(responseText) {
-       const dayArray = responseText.split("&");
-       const planArray = [];
-       for (let i = 0; i < dayArray.length; i++) {
-           planArray[i] = dayArray[i].split("|");
-       }
-       this.element.innerHTML = planArray[0][4];
-       
+       this.element.innerHTML = responseText;
+       document.getElementById("footer").className = "p-5 mt-5 bg-secondary text-white text-center";
     }
 }

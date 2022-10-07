@@ -11,16 +11,14 @@
  * @author macie
  */
 class GetPlanArray {
-    private $className;
+    public $className;
     public $planArray;
+    public $valid;
     
     public function __construct($className) {
         $this->className = $className;
         $path = FileNames::$names[$this->className];
         $this->planArray = ReadFile::getPlan($path);
-    }
-    
-    public function getPlan($hour, $day) {
-        return $this->planArray[$hour][$day];
+        $this->valid = ReadFile::getValid($path);
     }
 }

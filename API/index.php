@@ -12,6 +12,7 @@ spl_autoload_register(
     });
     
 try {
+    //$path = $_SERVER['DOCUMENT_ROOT'] . '/plan_www/plany/';
     $files = new FileNames('./plany/');
     $response = new AjaxHandlig();
     echo $response->response;

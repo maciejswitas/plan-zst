@@ -36,12 +36,8 @@ class AjaxHandlig {
             case 'getPlan':
                 $className = $_REQUEST['name'];
                 $plan = new GetPlanArray($className);
-                $firstDimensionArray = [];
-                foreach($plan->planArray as $row) {
-                    $firstDimensionArray[] = implode("|", $row);
-                }
-                $str = implode("&", $firstDimensionArray);
-                $this->response = $str;
+                $view = new MakeView($plan);
+                $this->response = $view->divView();    
             break;
         }
                 

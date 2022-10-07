@@ -8,14 +8,44 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Plan ZST</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            .navbar-custom {
+                background-color: #03a9f4;
+            }
+        </style>
     </head>
     <body onload="getClasses()">
-        <div id="mainView">
-            <form>
-                <select id="classSelect" name="className"></select>
-                <button type="button" onclick="getPlan()">Sprawdź</button>
-                <div id="planView"></div>
-            </form>
+        <div class="px-5 pt-5 pb-3 text-center">
+            <h1>PLAN LEKCJI</h1>
+            <p>Zespół Szkół Technicznych im. Tadeusza Kościuszki w Radomiu</p> 
+        </div>
+        <nav class="navbar navbar-custom navbar-expand-sm sticky-top" id="navbar">
+            <div class="container-fluid justify-content-center">
+                <form class="d-flex invisible" id="mainForm">
+                    <select id="classSelect" class="form-control me-2" name="className">
+                        <option value="" disabled selected hidden>wybierz klasę</option>
+                    </select>
+                    <button type="button" class="btn btn-secondary d-flex" onclick="getPlan()">Sprawdź</button>
+                </form>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="alert alert-warning alert-dismissible my-3">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>Uwaga!</strong> Aplikacja w wersji beta plan może zawierać błędy!
+            </div>
+        </div>
+        <div id="mainView" class="container-fluid pt-5">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-dark"></div>
+            </div>
+        </div>
+        <div class="p-5 mt-5 bg-secondary text-white text-center fixed-bottom" id="footer">
+            <footer>Projekt i wykonanie: <a href="mailto: maciej.switas@zst.radom.edu.pl" class="text-white">Maciej Świtas</a></footer>
         </div>
         <script src="./JS/ajax.js"></script>
         <script src="./JS/classes/MainView.js"></script>

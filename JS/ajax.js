@@ -33,8 +33,7 @@ function getClasses() {
     // Define a callback function
     xhttp.onload = function() {
         const view = new MainView("mainView");
-        view.addClassSelect(this.responseText, "classSelect");
-        
+        view.addClassSelect(this.responseText, "classSelect"); 
     }
 
     // Send a request
@@ -58,7 +57,7 @@ function getPlan() {
     value = document.getElementById('classSelect').value;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-        const view = new MainView("planView");
+        const view = new MainView("mainView");
         view.addPlan(this.responseText);
     }
     xhttp.open("GET", "./API/index.php?type=getPlan&name=" + value);
