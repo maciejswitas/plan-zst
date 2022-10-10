@@ -16,7 +16,6 @@ class ReadFile {
         $myFile = fopen($path, "r");
         $str = fread($myFile, filesize($path));
         fclose($myFile);
-        $str = str_replace("+", "%2B", $str);
         $htmlArray = explode(PHP_EOL, $str);
         $className = strip_tags($htmlArray[13]);
         return $className;
