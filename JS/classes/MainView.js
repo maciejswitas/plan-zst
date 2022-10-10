@@ -17,7 +17,7 @@ class MainView {
         for(let i=1; i < classesArray.length; i++) {
             option = document.createElement("option");
             option.text = classesArray[i];
-            option.value = classesArray[i];
+            option.value = classesArray[i].replace("+", "%2B");
             element.add(option);
         }
         document.getElementById("mainForm").className = "d-flex";
